@@ -6,6 +6,6 @@ __pycache__
 tmp
 logs/*.log
 *.xlsx
-*.txt
 *.env
 .env
+conf/config.yaml
