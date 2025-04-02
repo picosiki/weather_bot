@@ -13,11 +13,11 @@
 # Установка
 
 1. Клонирование репозитория
-   git clone https://github.com/your-repo/weather-bot.git
+   git clone https://github.com/picosiki/weather_bot.git
    cd weather-bot
-2. Установка зависимостей
+3. Установка зависимостей
    pip install -r requirements.txt
-3. Настройка
+4. Настройка
 Создайте файл modules/my_config.py и добавьте в него:
 class Config:
     BOT_TOKEN = "your_telegram_bot_token"
