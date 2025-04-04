@@ -4,15 +4,12 @@ import sqlite3
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from aiogram.filters import Command
-from modules.my_config import Config
 from datetime import datetime, timedelta, timezone
+import os
 
-config = Config()
-BOT_TOKEN = config.BOT_TOKEN
-WEATHER_API_KEY = config.WEATHER_API_KEY
 DB_PATH = "weather_bot.db"
-
-bot = Bot(token=BOT_TOKEN)
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher()
 
 # Инициализация базы данных

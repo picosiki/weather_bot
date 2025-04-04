@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-bot
+  template:
+    metadata:
+      labels:
+        app: weather-bot
+    spec:
+      containers:
+        - name: weather-bot
+          image: weather-bot:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: BOT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: weather-bot-secrets
+                  key: BOT_TOKEN
+            - name: WEATHER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: weather-bot-secrets
+                  key: WEATHER_API_KEY

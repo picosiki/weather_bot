@@ -9,3 +9,5 @@ logs/*.log
 *.env
 .env
 conf/config.yaml
+*.db
+ledger
